@@ -3,6 +3,8 @@ from .models import Order, OrderItem
 import csv
 import datetime
 from django.http import HttpResponse
+from django.utils.text import slugify
+from unidecode import unidecode
 
 
 class OrderItemInline(admin.TabularInline):
@@ -13,7 +15,8 @@ class OrderItemInline(admin.TabularInline):
 def export_to_csv(modeladmin, request, queryset):
     opts = modeladmin.model._meta
     response = HttpResponse(content_type='text/csv')
-    response['Content-Disposition'] = 'attachment;filename="{}.csv"'.format(opts.verbose_name)
+    filename = unidecode(opts.verbose_name)
+    response['Content-Disposition'] = 'attachment;filename="'+filename+'".csv"'
     writer = csv.writer(response)
 
     fields = [field for field in opts.get_fields() if not field.many_to_many\

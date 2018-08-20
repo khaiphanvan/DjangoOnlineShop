@@ -15,7 +15,7 @@ class Order(models.Model):
     braintree_id = models.CharField(max_length=150, blank=True)
 
     class Meta:
-        verbose_name='Don hang'
+        verbose_name='Đơn hàng'
         verbose_name_plural='Đơn hàng'
         ordering = ('-created',)
 

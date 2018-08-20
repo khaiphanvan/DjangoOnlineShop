@@ -15,7 +15,7 @@
         <label for="expiration-date">Expiration Date</label>
         <div id="expiration-date" class="field">12/2019</div>
 
-        <input type="hidden" id="nonce" name="payment_method_nonce" value="">
+{#        <input type="hidden" id="nonce" name="payment_method_nonce" value="">#}
         {% csrf_token %}
         <input type="submit" value="Pay">
     </form>

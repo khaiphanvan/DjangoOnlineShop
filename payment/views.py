@@ -9,11 +9,11 @@ def payment_process(request):
 
     if request.method == 'POST':
         # retrieve nonce
-        nonce = request.POST.get('payment_method_nonce', 'fake-valid-nonce')
+        # nonce = request.POST.get('payment_method_nonce', 'fake-valid-nonce')
         # create and submit transaction
         result = braintree.Transaction.sale({
             'amount': '{:.2f}'.format(order.get_total_cost()),
-            'payment_method_nonce': nonce,
+            # 'payment_method_nonce': nonce,
             'options': {
                 'submit_for_settlement': True
             }
