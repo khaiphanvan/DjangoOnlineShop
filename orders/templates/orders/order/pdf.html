@@ -1,6 +1,10 @@
+{% load static %}
 <html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static "css/pdf.css" %}"/>
+</head>
 <body>
-<h1>My Shop</h1>
+<h1>Django Online Shop</h1>
 <p>
     Invoice no. {{ order.id }}<br>
     <span class="secondary">

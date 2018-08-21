@@ -7,8 +7,12 @@ from django.urls import reverse
 from django.contrib.admin.views.decorators import staff_member_required
 from django.conf import settings
 from django.http import HttpResponse
+
+
 from django.template.loader import render_to_string
-import weasyprint
+from io import BytesIO
+from django.template.loader import get_template
+import xhtml2pdf.pisa as pisa
 
 
 def order_create(request):
@@ -48,9 +52,22 @@ def admin_order_detail(request, order_id):
 
 @staff_member_required
 def admin_order_pdf(request, order_id):
+    # order = get_object_or_404(Order, id=order_id)
+    # html = render_to_string('orders/order/pdf.html', {'order': order})
+    # response = HttpResponse(content_type='application/pdf')
+    # response['Content-Disposition'] = 'filename="order_{}.pdf"'.format(order.id)
+    # weasyprint.HTML(string=html).write_pdf(response,stylesheets=[weasyprint.CSS(settings.STATIC_ROOT + 'css/pdf.css')])
+    # return response
+
     order = get_object_or_404(Order, id=order_id)
     html = render_to_string('orders/order/pdf.html', {'order': order})
-    response = HttpResponse(content_type='application/pdf')
-    response['Content-Disposition'] = 'filename="order_{}.pdf"'.format(order.id)
-    # weasyprint.HTML(string=html).write_pdf(response,stylesheets=[weasyprint.CSS(settings.STATIC_ROOT + 'css/pdf.css')])
-    return response
+    result = BytesIO()
+
+    pdf = pisa.pisaDocument(BytesIO(html.encode("UTF-8")), result)
+    if not pdf.err:
+        response = HttpResponse(result.getvalue(), content_type='application/pdf')
+        response['Content-Disposition'] = 'filename="order_{}.pdf"'.format(order.id)
+        return response
+    else:
+        response = HttpResponse("Error Rendering PDF", status=400)
+        return response
