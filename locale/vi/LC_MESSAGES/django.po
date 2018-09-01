@@ -9,27 +9,26 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-30 17:30+0700\n"
-"PO-Revision-Date: 2018-08-30 16:39+0000\n"
+"PO-Revision-Date: 2018-08-30 17:31+0000\n"
 "Last-Translator: b'  <tieuphongabc123@gmail.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Translated-Using: django-rosetta 0.9.0\n"
 
 #: .\DjangoOnlineShop\settings.py:112
 msgid "English"
-msgstr ""
+msgstr "Tiếng Anh"
 
 #: .\DjangoOnlineShop\settings.py:113
 msgid "Vietnam"
-msgstr ""
+msgstr "Vietnamese"
 
 #: .\DjangoOnlineShop\urls.py:24
 msgid "admin/"
-msgstr ""
+msgstr "quantri"
 
 #: .\DjangoOnlineShop\urls.py:25
 msgid "cart/"
@@ -44,8 +43,10 @@ msgid "payment/"
 msgstr ""
 
 #: .\DjangoOnlineShop\urls.py:28
+#, fuzzy
+#| msgid "Coupon"
 msgid "coupons/"
-msgstr ""
+msgstr "Mã khuyến mại"
 
 #: .\DjangoOnlineShop\urls.py:29
 msgid "rosetta/"
@@ -53,11 +54,11 @@ msgstr ""
 
 #: .\cart\forms.py:11
 msgid "Quantity"
-msgstr ""
+msgstr "Số lượng"
 
 #: .\coupons\forms.py:6
 msgid "Coupon"
-msgstr ""
+msgstr "Mã khuyến mại"
 
 #: .\payment\urls.py:8
 msgid "process/"
@@ -73,37 +74,45 @@ msgstr ""
 
 #: .\shop\templates\shop\base.html:7 .\shop\templates\shop\base.html:15
 msgid "Django Online Shop"
-msgstr ""
+msgstr "Cửa hàng Django Trực tuyến"
 
 #: .\shop\templates\shop\base.html:17
 msgid "Language"
-msgstr ""
+msgstr "Ngôn ngữ"
 
 #: .\shop\templates\shop\base.html:34
 msgid "Your cart"
-msgstr ""
+msgstr "Giỏ hàng"
 
 #: .\shop\templates\shop\base.html:36
-#, python-format
+#, fuzzy, python-format
+#| msgid ""
+#| "\n"
+#| "                    %(total_items)s item%(total_items_plural)s,\n"
+#| "                    $%(total_price)s\n"
+#| "                    "
 msgid ""
 "\n"
 "                        %(total_items)s item%(total_items_plural)s,\n"
 "                        $%(total_price)s\n"
 "                    "
 msgstr ""
+"\n"
+"%(total_items)s sản phẩm%(total_items_plural)s,\n"
+"$%(total_price)s"
 
 #: .\shop\templates\shop\base.html:42
 msgid "Your cart is empty."
-msgstr ""
+msgstr "Giỏ hàng trống"
 
 #: .\shop\templates\shop\product\detail.html:21
 msgid "Add to cart"
-msgstr ""
+msgstr "Thêm vào giỏ hàng"
 
 #: .\shop\templates\shop\product\list.html:5
 msgid "Products"
-msgstr ""
+msgstr "Sản phẩm"
 
 #: .\shop\templates\shop\product\list.html:10
 msgid "Categories"
-msgstr ""
+msgstr "Danh mục"
