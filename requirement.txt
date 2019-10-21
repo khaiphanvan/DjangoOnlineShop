@@ -31,7 +31,7 @@ six==1.11.0
 tinycss2==0.6.1
 tornado==5.1
 Unidecode==1.0.22
-urllib3==1.23
+urllib3==1.24.2
 vine==1.1.4
 WeasyPrint==0.42.3
 webencodings==0.5.1
